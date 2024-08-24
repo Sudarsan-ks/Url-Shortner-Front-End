@@ -31,7 +31,7 @@ export function ShortUrl() {
                             return (
                                 <tr key={url._id} >
                                     <td>{url.date}</td>
-                                    <td><a href={url.shortUrl}>{url.shortUrl}</a></td>
+                                    <td><a href={`/redirect/${url.shortUrl}`}>{url.shortUrl}</a></td>
                                     <td>{url.clicks}</td>
                                 </tr>
                             )
