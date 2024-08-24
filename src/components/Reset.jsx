@@ -5,13 +5,13 @@ import { useParams } from "react-router-dom"
 
 export function Reset() {
     const [viewPassword, setViewPassword] = useState(false)
+    const { token } = useParams()
 
     const handleReset = async (event) => {
         event.preventDefault()
-        const { token } = useParams()
         const password = event.target.password.value
         try {
-           const response =  await axios.post(`${API}/user/resetPassword/${token}`, { password })
+            const response = await axios.post(`${API}/user/resetPassword/${token}`, { password })
             alert(response.data.message)
         } catch (error) {
             console.error("Error while reseting the password", error)
