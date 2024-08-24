@@ -73,7 +73,8 @@ body {
 
 .login-button,
 .register-btn,
-.forgot-btn {
+.forgot-btn,
+.reset-btn {
     text-align: center;
 }
 
@@ -162,7 +163,8 @@ body {
     right: 0.5rem;
 }
 
-.register-submit {
+.register-submit,
+.reset-submit {
     width: 100%;
     padding: 0.5rem;
     border: none;
