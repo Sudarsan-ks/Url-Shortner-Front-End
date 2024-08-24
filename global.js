@@ -1,0 +1,1 @@
+export const API ="https://url-shortner-back-end-7g6v.onrender.com"
