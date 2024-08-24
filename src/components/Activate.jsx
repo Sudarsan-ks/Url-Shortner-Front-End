@@ -11,8 +11,13 @@ export function Activate() {
 
     const { token } = useParams()
     const handleActivate = async () => {
-        await axios.get(`${API}/user/activate/${token}`)
-        alert("Account Activated")
+        try {
+            await axios.get(`${API}/user/activate/${token}`);
+            alert("Account Activated");
+        } catch (error) {
+            console.error("Activation failed:", error);
+            alert("Activation failed. Please try again.");
+        }
     }
     handleActivate()
     return (
