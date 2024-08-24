@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom"
 export function Reset() {
     const [viewPassword, setViewPassword] = useState(false)
 
-    const handleForgot = async (event) => {
+    const handleReset = async (event) => {
         event.preventDefault()
         const { token } = useParams()
         const password = event.target.password.value
