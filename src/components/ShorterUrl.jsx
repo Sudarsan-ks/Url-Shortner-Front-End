@@ -4,10 +4,16 @@ import { API } from "../../global"
 
 export function ShortUrl() {
     const [short, setShort] = useState([])
+    const token = localStorage.getItem("Token")
+    const verifyToken = JSON.parse(token)
     useEffect(() => {
         const fetchShortUrl = async () => {
             try {
-                const response = await axios.get(`${API}/url/get/shortUrl`)
+                const response = await axios.get(`${API}/url/get/shortUrl`, {
+                    headers: {
+                        Authorization: verifyToken
+                    }
+                })
                 setShort(response.data)
             } catch (error) {
                 console.log("Error while getting the shortUrl", error)
