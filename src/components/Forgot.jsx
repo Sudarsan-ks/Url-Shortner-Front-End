@@ -6,8 +6,8 @@ export function Forgot() {
         event.preventDefault()
         const email = event.target.email.value
         try {
-            await axios.post(`${API}/user/forgotPassword`, {email})
-            alert("Please your email for reset link")
+            const response = await axios.post(`${API}/user/forgotPassword`, {email})
+            alert(response.data.message)
         } catch (error) {
             console.error("Error while send forgot email", error)
         }

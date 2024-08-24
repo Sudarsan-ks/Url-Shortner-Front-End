@@ -21,11 +21,10 @@ export function Login() {
             const response = await axios.post(`${API}/user/login`, loginUser)
             localStorage.setItem("User", JSON.stringify(response.data.user));
             localStorage.setItem("Token", JSON.stringify(response.data.token));
-            alert("Login Successfully")
+            alert(response.data.message)
             navigate("/home")
         } catch (error) {
             console.error("Invalid Credential")
-            alert("Invalid Credential")
         }
         finally {
             setLoading(false)

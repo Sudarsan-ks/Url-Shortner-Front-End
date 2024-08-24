@@ -11,8 +11,8 @@ export function Reset() {
         const { token } = useParams()
         const password = event.target.password.value
         try {
-            await axios.post(`${API}/user/resetPassword/${token}`, { password })
-            alert("Password Reseted Successfully")
+           const response =  await axios.post(`${API}/user/resetPassword/${token}`, { password })
+            alert(response.data.message)
         } catch (error) {
             console.error("Error while reseting the password", error)
         }
