@@ -25,7 +25,7 @@ export function UrlRedirect() {
         <div className='urlRedirect'>
             <h1>Redirecting...</h1>
             <div className="loading">
-                <CircularProgress />
+            <CircularProgress />
             </div>
         </div>
     );

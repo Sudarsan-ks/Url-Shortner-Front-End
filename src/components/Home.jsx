@@ -58,7 +58,7 @@ export function Home() {
                     </div>
                     <div className="urlShort">
                         {short && (
-                            <a href={url} target="_blank" rel="noopener noreferrer">
+                            <a href={`/redirect/${url}`} target="_blank" rel="noopener noreferrer">
                                 {url}
                             </a>
                         )}
