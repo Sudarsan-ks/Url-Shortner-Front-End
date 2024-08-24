@@ -15,6 +15,7 @@ export function ShortUrl() {
                     }
                 })
                 setShort(response.data)
+                alert(response.data.message)
             } catch (error) {
                 console.log("Error while getting the shortUrl", error)
             }
