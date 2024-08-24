@@ -24,8 +24,8 @@ export function Register() {
             password
         }
         try {
-            await axios.post(`${API}/user/register`, registerData)
-            alert("REGISTERED SUCCESSFULLY")
+            const response = await axios.post(`${API}/user/register`, registerData)
+            alert(response.data.message)
             alert("We have send an EMAIL to activate your ACCOUNT")
         }
         catch (error) {
