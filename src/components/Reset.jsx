@@ -1,11 +1,12 @@
 import axios from "axios"
 import { useState } from "react"
 import { API } from "../../global"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 export function Reset() {
     const [viewPassword, setViewPassword] = useState(false)
     const { token } = useParams()
+    const navigate = useNavigate()
 
     const handleReset = async (event) => {
         event.preventDefault()
@@ -13,6 +14,7 @@ export function Reset() {
         try {
             const response = await axios.post(`${API}/user/resetPassword/${token}`, { password })
             alert(response.data.message)
+            navigate('/')
         } catch (error) {
             console.error("Error while reseting the password", error)
         }
