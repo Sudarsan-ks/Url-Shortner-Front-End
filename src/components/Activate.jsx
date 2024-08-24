@@ -12,6 +12,7 @@ export function Activate() {
     const { token } = useParams()
     const handleActivate = async () => {
         await axios.get(`${API}/user/activate/${token}`)
+        alert("Account Activated")
     }
     handleActivate()
     return (
