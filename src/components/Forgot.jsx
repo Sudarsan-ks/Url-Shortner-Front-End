@@ -1,6 +1,15 @@
-export function Forgot(e) {
-    const handleForgot =()=>{
-        console.log(e)
+import axios from "axios"
+import { API } from "../../global"
+
+export function Forgot() {
+    const handleForgot = async (e) => {
+        const email = e.target.email.value
+        try {
+            await axios.post(`${API}/user/forgotPassword`, email)
+            alert("Please your email for reset link")
+        } catch (error) {
+            console.error("Error while send forgot email", error)
+        }
     }
     return (
         <div className="forgot">
@@ -9,6 +18,9 @@ export function Forgot(e) {
                 <form onSubmit={handleForgot}>
                     <label htmlFor="email"><b>Email:</b></label><br />
                     <input type="text" name="email" />
+                    <div className="forgot-btn">
+                        <button type="submit" className="forgot-submit">Submit</button>
+                    </div>
                 </form>
             </div>
 
