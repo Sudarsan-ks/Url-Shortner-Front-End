@@ -12,7 +12,6 @@ export function Home() {
     const [short, setShort] = useState(false)
     const navigate = useNavigate()
     const token = localStorage.getItem("Token")
-    const verifyToken = JSON.parse(token)
 
     const handleGenrate = async (e) => {
         e.preventDefault()
@@ -20,7 +19,7 @@ export function Home() {
         try {
             const response = await axios.post(`${API}/url/originalUrl`, { originalUrl }, {
                 headers: {
-                    Authorization: verifyToken
+                    Authorization: token
                 }
             })
             setUrl(response.data.shortUrl)
